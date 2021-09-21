@@ -81,19 +81,41 @@ namespace BlocoNotas
 
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(richTextBoxCentral.SelectedText);
-            richTextBoxCentral.Rtf = "";
+           if (richTextBoxCentral.SelectedText == "")
+            {
+                MessageBox.Show("Selecione um texto!");
+            }
+            else
+            {
+                Clipboard.SetText(richTextBoxCentral.SelectedText);
+                richTextBoxCentral.SelectedText = "";
+            }
 
         }
 
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(richTextBoxCentral.SelectedText);
+
+            if (richTextBoxCentral.SelectedText == "")
+            {
+                MessageBox.Show("Selecione um texto!");
+            }
+            else
+            {
+                Clipboard.SetText(richTextBoxCentral.SelectedText);
+            }
         }
 
         private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            richTextBoxCentral.SelectedText = Clipboard.GetText();
+            if (richTextBoxCentral.SelectedText == "")
+            {
+                MessageBox.Show("Copie um texto!");
+            }
+            else
+            {
+                richTextBoxCentral.SelectedText = Clipboard.GetText();
+            }
         }
 
         private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
@@ -103,7 +125,43 @@ namespace BlocoNotas
 
         private void customizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (fontDialog1.ShowDialog() == (DialogResult.OK))
+            {
+                richTextBoxCentral.SelectionFont = fontDialog1.Font;
+            }
+        }
 
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(colorDialog1.ShowDialog() == (DialogResult.OK))
+            {
+                richTextBoxCentral.SelectionColor = colorDialog1.Color;
+            }
+        }
+
+        private void openToolStripButton_Click(object sender, EventArgs e)
+        {
+            openToolStripMenuItem.PerformClick();
+        }
+
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+            saveAsToolStripMenuItem.PerformClick();
+        }
+
+        private void cutToolStripButton_Click(object sender, EventArgs e)
+        {
+            cutToolStripMenuItem.PerformClick();
+        }
+
+        private void copyToolStripButton_Click(object sender, EventArgs e)
+        {
+            copyToolStripMenuItem.PerformClick();
+        }
+
+        private void pasteToolStripButton_Click(object sender, EventArgs e)
+        {
+            pasteToolStripMenuItem.PerformClick();
         }
     }
 }

@@ -65,6 +65,8 @@ namespace BlocoNotas
             this.richTextBoxCentral = new System.Windows.Forms.RichTextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -254,6 +256,7 @@ namespace BlocoNotas
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.optionsToolStripMenuItem.Text = "&Cor da Fonte";
+            this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -292,6 +295,7 @@ namespace BlocoNotas
             this.openToolStripButton.Name = "openToolStripButton";
             this.openToolStripButton.Size = new System.Drawing.Size(29, 24);
             this.openToolStripButton.Text = "&Open";
+            this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
             // 
             // saveToolStripButton
             // 
@@ -301,6 +305,7 @@ namespace BlocoNotas
             this.saveToolStripButton.Name = "saveToolStripButton";
             this.saveToolStripButton.Size = new System.Drawing.Size(29, 24);
             this.saveToolStripButton.Text = "&Save";
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
             // toolStripSeparator6
             // 
@@ -315,6 +320,7 @@ namespace BlocoNotas
             this.cutToolStripButton.Name = "cutToolStripButton";
             this.cutToolStripButton.Size = new System.Drawing.Size(29, 24);
             this.cutToolStripButton.Text = "C&ut";
+            this.cutToolStripButton.Click += new System.EventHandler(this.cutToolStripButton_Click);
             // 
             // copyToolStripButton
             // 
@@ -324,6 +330,7 @@ namespace BlocoNotas
             this.copyToolStripButton.Name = "copyToolStripButton";
             this.copyToolStripButton.Size = new System.Drawing.Size(29, 24);
             this.copyToolStripButton.Text = "&Copy";
+            this.copyToolStripButton.Click += new System.EventHandler(this.copyToolStripButton_Click);
             // 
             // pasteToolStripButton
             // 
@@ -333,6 +340,7 @@ namespace BlocoNotas
             this.pasteToolStripButton.Name = "pasteToolStripButton";
             this.pasteToolStripButton.Size = new System.Drawing.Size(29, 24);
             this.pasteToolStripButton.Text = "&Paste";
+            this.pasteToolStripButton.Click += new System.EventHandler(this.pasteToolStripButton_Click);
             // 
             // toolStripSeparator7
             // 
@@ -418,6 +426,8 @@ namespace BlocoNotas
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 
